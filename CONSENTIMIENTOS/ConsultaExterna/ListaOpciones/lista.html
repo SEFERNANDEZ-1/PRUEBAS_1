@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href='estilos/style.css'>
+    <link rel="stylesheet" href="estilos/estilo_modal.css">
+    <script src="js/DatosPaciente.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/DatosPaciente.js"></script>
+    
+    <title>Documento de consentimiento</title>
+</head>
+
+<body>
+    <section class="form-register">
+        <h1>
+            Lista de Consentimientos Informados Consulta Externa
+        </h1>
+        <div class="IntroConsen">
+            A continuación, te presentamos una serie de formularios de consentimiento informado. Estos documentos
+            son esenciales para proporcionarte información detallada sobre diversos procedimientos, tratamientos o
+            intervenciones médicas.
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo, porro odio doloremque ad perferendis eos
+            asperiores assumenda itaque expedita possimus, voluptate tempora fuga hic at eius alias in
+            exercitationem? Accusamus!
+        </div>
+        <div class="ListaInteconsulta">
+            <div>
+                <label for="">
+                    <p>
+                        <input type="checkbox" name="cirugiaPlastica" id="cirugiaPlastica" class="especialidad"
+                            autocomplete="off"><label for="cirugiaPlastica">Cirugia Plastica</label>
+                    </p>
+                </label>
+            </div>
+            <div>
+                <label for="">
+                    <p>
+                        <input type="checkbox" name="fisiatria" id="fisiatria" class="especialidad"
+                            autocomplete="off"><label for="fisiatria">Interconsulta de Fisiatria</label>
+                    </p>
+                </label>
+            </div>
+            <div>
+                <label for="">
+                    <p>
+                        <input type="checkbox" name="MedicinaDolor" id="MedicinaDolor" class="especialidad"
+                            autocomplete="off"><label for="MedicinaDolor">Medicina del Dolor</label>
+                    </p>
+                </label>
+            </div>
+            <div>
+                <label for="">
+                    <p>
+                        <input type="checkbox" name="Ortopedia" id="Ortopedia" class="especialidad"
+                            autocomplete="off"><label for="Ortopedia">Ortopedia</label>
+                    </p>
+                </label>
+            </div>
+            <button class="BotonSiguiente" onclick="validarCheckboxes()">Llenar Campos</button>
+        </div>
+    </section>
+    <section class="modal">
+        <div class="modal__container">
+            <button class="modal__close" id="cerrar" onclick="botonCerrarModal()">X</button>
+            <h2 class="modal__title">¡Bienvenido al sitio!</h2>
+            <p class="modal__paragraph">Modalidad:
+                <select name="modalidad" id="modalidad">
+                    <option value="">Seleccione</option>
+                    <option value="telexperticia">telexperticia</option>
+                    <option value="interconsultaEspecializada">Interconsulta Especializada</option>
+                </select>
+            </p>
+            <p class="modal__paragraph">Autoriza:
+                <select name="autorizacion" id="autorizacion" required>
+                    <option value="">Seleccione</option>
+                    <option value="SI">Si</option>
+                    <option value="NO">No</option>
+                </select>
+            </p>
+            <p class="modal__paragraph">Nombre del Paciente: <input type="text" name="nombrePaciente"
+                    id="nombrePaciente" required></p>
+            <p class="modal__paragraph">Documento Identidad del Paciente: <input type="number"
+                    name="documentoIdentidadPaciente" id="documentoIdentidadPaciente" required>
+            </p>
+            <p class="modal__paragraph">Parentesco: <input type="text" name="Parentesco" id="Parentesco" required></p>
+
+            <button class="generar" onclick="Consentimientos()"> Generar Documentos</button>
+            <p>Antes de Generar el documento revise que todos los datos con correstos</p>
+        </div>
+    </section>
+</body>
+
+</html>

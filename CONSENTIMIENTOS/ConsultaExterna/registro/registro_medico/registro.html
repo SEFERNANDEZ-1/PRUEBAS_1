@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel='stylesheet' type='text/css' media='screen' href='estilos/style.css'>
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Documento de consentimiento</title>
+</head>
+<body>
+    <section class="form-register"> 
+        
+       <form action='registro.php' method="POST" id='formulario' name="formulario">
+        
+         <!-- para poner la fecha actual -->
+        <script>
+            $( document ).ready(function() {
+            
+                var now = new Date();
+            
+                var day = ("0" + now.getDate()).slice(-2);
+                var month = ("0" + (now.getMonth() + 1)).slice(-2);
+            
+                var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
+                $("#fecha").val(today);
+            });
+
+            $(document).on('click', '#save', function () {
+                var $canvas = document.querySelector('#cvs');
+                var img = document.querySelector('#img');
+                img.value = $canvas.toDataURL();                             
+                document.forms['formulario'].submit();
+            });
+
+            $(document).on('change', '#image_uploads', function (e) {
+            var fr=new FileReader();
+            fr.addEventListener("load", (event) => {
+                    
+                    document.getElementById("imagen").value=event.target.result;
+                });
+                fr.readAsDataURL(this.files[0]);
+            });
+        </script>
+        <!-- comienzo del formulario -->
+        <!-- encabezado -->
+        <div class="tableFormat table">
+            <table border="2">
+                    <tbody>
+                        <tr>
+                            <td> 
+                                
+                                <img src="dolormet.jpg">
+            
+                                <td>
+                                    <center> 
+                                        REGISTRO DE NUEVO USUARIO
+                                    </center>
+                                </td>
+                                <td >
+                                    <table border="2">
+                                        <tr>
+                                            <td>
+                                                Código: F-TF-012
+                                            </td>
+                                        </tr>
+            
+                                        <tr>
+                                            <td>
+                                                Version:01
+                                            </td>
+                                        </tr>
+            
+                                        <tr>
+                                            <td>
+                                                Página:1/1
+                                            </td>
+                                        </tr>
+                                    </table>                    
+                                </td>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table> <br>
+            </div>
+            <a href="../../indexFormularios.html"><input type="button" value="IR AL MENÚ" class="input"/></a>
+            <a href="../registros.html"><input type="button" value="VOLVER A REGISTRAR" class="input"/></a><br><br>
+
+            Nombre: <input type="text" name="nombre" autocomplete="off" class="input" placeholder="Dígite Su Nombre" autocomplete="off" required/> <br>
+            Cédula: <input type="text" name="cedula" autocomplete="off" class="input" placeholder="Dígite Su Cédula" autocomplete="off" required/><br>
+            Registro Profesional: <input type="text" name="registro_p" autocomplete="off" class="input" placeholder="Dígite Registro Profesional" autocomplete="off" required/><br>
+            Firma:
+            <script src='js/index.js'></script>
+            <div>
+                <label for="image_uploads">Cargue La Imagen De La Firma (PNG, JPG)</label>
+                <input type="file" id="image_uploads" name="image_uploads" accept=".jpg, .jpeg, .png" multiple="" class="input">
+            </div>
+            <div class="preview">
+                <ol id="list">
+                    <input type="hidden" name="imagen" id="imagen" class="input">
+                </ol>
+            </div>
+
+        <!-- botones nuevos -->
+        <!-- <button id="save" class="button" type="button">ENVIAR</button>  -->
+        <input type="submit" value="ENVIAR" class="button">
+        <input type="hidden" id="img" name="img" display="none" />        
+    </section>  
+
+       </form>      
+        
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="CSS/menu.css">
+	<script src="lista.js"></script>
+	<title>Document</title>
+</head>
+
+<body>
+	<div class="dropdown-container">
+		<button class="dropdown-btn" onclick="toggleDropdown(1)">REGISTROS</button>
+		<div class="dropdown-content" id="dropdown1">
+			<a href="indexFormularios.html">LOGIN PRINCIPAL</a></li>
+			<a href="registro/registo_cirugiaPlastica/registro.html">REGISTRO CIRUGIA PLASTICA</a>
+			<a href="registro/Registro_fisiatra/registro.html">REGISTRO FISIATRA</a>			
+			<a href="registro/registro_medicinaDolor/registro.html">REGISTRO MEDICINA DEL DOLOR</a>			
+			<a href="registro/registro_ortopedia/registro.html">REGISTRO ORTOPEDIA</a>
+		</div>
+	</div>
+	<p>
+		<br>
+	</p>
+	<div class="dropdown-container">
+		<button class="dropdown-btn" onclick="toggleDropdown(2)">BORRAR</button>
+		<div class="dropdown-content" id="dropdown2">
+			<a href="indexFormularios.html">LOGIN PRINCIPAL</a></li>
+			<a href="registro/borrado/especialista/b_especialista.php">BORRADO DE ESPECIALISTA</a>
+			<a href="registro/borrado/medico_general/b_medico.php">BORRADO DE MEDICO</a>	
+		</div>
+	</div>
+</body>
+
+</html>
